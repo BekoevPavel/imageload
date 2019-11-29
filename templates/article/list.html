@@ -1,0 +1,29 @@
+{% extends 'article/article.html'%}
+
+{% block  title %}
+
+Последние статьи
+{% endblock %}
+
+{% block content %}
+
+    {% if latest_articles_list %}
+        <hr>
+        {% for a in latest_articles_list %}
+
+            <a href="#">
+                {{ a.article_title }}
+            </a>
+              <textarea  >
+
+{{ a.article_text }}
+
+</textarea>
+            <hr>
+        {% endfor %}
+
+    {% endif %}
+
+
+
+{% endblock %}
